@@ -5,4 +5,4 @@ var requestHandler=require('./requestHandler')
 var handle={};
 handle["/hello"]=requestHandler.helloPage;
 handle["/pageNotFound"]=requestHandler.pageNotFound;
-server.start(router.route,handle);
+server.start(router.route,handle,process.argv[2]);

@@ -1,7 +1,7 @@
 var http = require("http");
 var url = require("url");
 
-function startServer(route,handle){
+function startServer(route,handle,port){
 
   function onRequest(request,response){
     var pathName=url.parse(request.url,true).pathname;
@@ -14,7 +14,7 @@ function startServer(route,handle){
       console.log('Address in use! Please try after some time.');
     }
   });
-  server.listen(8000);
+  server.listen(Number(port));
 }
 
 exports.start=startServer
